@@ -57,7 +57,7 @@ export const GetStarted = () => {
                                             type='password' placeholder='Insert a password'>
                                         </input>
                                     </div>
-                                    <button className='bg-green-800 font-medium uppercase 
+                                    <button className='bg-green-800 botoncito font-medium uppercase 
                                 py-2.5 mt-4'>
                                         Create an account
                                     </button>
@@ -79,7 +79,7 @@ export const GetStarted = () => {
                                                 type='password' placeholder='Insert a password'>
                                             </input>
                                         </div>
-                                        <button className='bg-green-800 font-medium uppercase 
+                                        <button className='bg-green-800 botoncito font-medium uppercase 
                                 py-2.5 mt-4'>
                                             Go to Application
                                         </button>
