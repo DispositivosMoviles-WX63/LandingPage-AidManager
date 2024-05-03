@@ -12,52 +12,79 @@ export const GetStarted = () => {
     const [hasRegister, setHasRegister] = useState(false);
 
     return (
-        <section className='h-screen w-full'>
+        <section className='h-screen w-full relative'>
+            <div className='z-50' style={{ position: 'fixed', top: '0', left: '0' }}>
+                <div className='return-home flex flex-row gap-2 items-center p-2.5'>
+                    <div className='bg-green-900 p-1 rounded-full'>
+                        <img className='w-3 h-3 rounded-full' src={ArrowIcon} />
+                    </div>
+                    <p className='text-xl font-medium tracking-wide mb-0.5 text-white'>Return to home</p>
+                </div>
+            </div>
             <div className='h-full grid grid-cols-2 grid-rows-1 text-slate-50'>
                 <div className='h-full w-full hero'>
-                    <div className='flex flex-row gap-2 items-center justify-start'>
-                        <div className='return-home z-50 flex flex-row gap-2 items-center p-2.5'>
-                            <div className='bg-green-900 p-1 rounded-full'>
-                                <img className='w-3 h-3 rounded-full' src={ArrowIcon} />
-                            </div>
-                            <p className='text-xl font-medium tracking-wide mb-0.5 text-white'>Return to home</p>
-                        </div>
-                    </div>
                 </div>
                 <div className='h-full bg-stone-800 flex flex-col gap-5 justify-center'>
                     <section className='flex flex-col w-11/12 max-w-[600px] mx-auto gap-8'>
+                        <h1 className='mb-2 text-green-700 font-medium text-center text-5xl font-lora tracking-wide'>Welcome to</h1>
                         <div className='flex flex-col justify-center w-full mb-5 px-10'>
                             <img className='w-full h-full' src={AidLogoLogin}></img>
                         </div>
-                        <form className='flex flex-col gap-6'>
-                            <div className='flex flex-col gap-2'>
-                                <label className='font-medium tracking-wide'>Nombre:</label>
-                                <input
-                                    className='py-2 indent-3 rounded-sm bg-slate-200 text-slate-900'
-                                    type='text' placeholder='Insert your name'>
-                                </input>
-                            </div>
-                            <div className='flex flex-col gap-2'>
-                                <label className='font-medium tracking-wide'>Email:</label>
-                                <input
-                                    className='py-2 indent-3 rounded-sm bg-slate-200 text-slate-900'
-                                    type='email' placeholder='Nekosoap@nekito.com'>
-                                </input>
-                            </div>
-                            <div className='flex flex-col gap-2'>
-                                <label className='font-medium tracking-wide'>Password:</label>
-                                <input
-                                    className='py-2 indent-3 rounded-sm bg-slate-200 text-slate-900'
-                                    type='password' placeholder='Insert a password'>
-                                </input>
-                            </div>
-                            <button className='bg-green-800 font-medium uppercase 
+                        {
+                            hasRegister ? (
+                                <form className='flex flex-col gap-6'>
+                                    <div className='flex flex-col gap-2'>
+                                        <label className='font-medium tracking-wide'>Nombre:</label>
+                                        <input
+                                            className='py-2 indent-3 rounded-sm bg-slate-200 text-slate-900'
+                                            type='text' placeholder='Insert your name'>
+                                        </input>
+                                    </div>
+                                    <div className='flex flex-col gap-2'>
+                                        <label className='font-medium tracking-wide'>Email:</label>
+                                        <input
+                                            className='py-2 indent-3 rounded-sm bg-slate-200 text-slate-900'
+                                            type='email' placeholder='Nekosoap@nekito.com'>
+                                        </input>
+                                    </div>
+                                    <div className='flex flex-col gap-2'>
+                                        <label className='font-medium tracking-wide'>Password:</label>
+                                        <input
+                                            className='py-2 indent-3 rounded-sm bg-slate-200 text-slate-900'
+                                            type='password' placeholder='Insert a password'>
+                                        </input>
+                                    </div>
+                                    <button className='bg-green-800 font-medium uppercase 
                                 py-2.5 mt-4'>
-                                Create an account
-                            </button>
-                        </form>
+                                        Create an account
+                                    </button>
+                                </form>
+                            ) :
+                                (
+                                    <form className='flex flex-col gap-6'>
+                                        <div className='flex flex-col gap-2'>
+                                            <label className='font-medium tracking-wide'>Email:</label>
+                                            <input
+                                                className='py-2 indent-3 rounded-sm bg-slate-200 text-slate-900'
+                                                type='text' placeholder='Insert your name'>
+                                            </input>
+                                        </div>
+                                        <div className='flex flex-col gap-2'>
+                                            <label className='font-medium tracking-wide'>Password:</label>
+                                            <input
+                                                className='py-2 indent-3 rounded-sm bg-slate-200 text-slate-900'
+                                                type='password' placeholder='Insert a password'>
+                                            </input>
+                                        </div>
+                                        <button className='bg-green-800 font-medium uppercase 
+                                py-2.5 mt-4'>
+                                            Go to Application
+                                        </button>
+                                    </form>
+                                )
+                        }
                         <div className='flex flex-col items-center gap-3.5 mt-2'>
-                            <h2 className='font-medium tracking-wide'>Register with</h2>
+                            <h2 className='font-medium tracking-wide'>{ hasRegister? "Register with": "Sign in with" }</h2>
                             <div className='flex flex-row w-full gap-3'>
                                 <div
                                     className='flex flex-row items-center justify-center cursor-pointer
@@ -82,8 +109,12 @@ export const GetStarted = () => {
                                     <p>Facebook</p>
                                 </div>
                             </div>
-                            <p className='mt-6 text-slate-300 text-center'>Do you have an account?
-                                <a className='text-white font-medium tracking-wide cursor-pointer'> Sign in</a>
+                            <p className='mt-6 text-slate-300 text-center'>{hasRegister ? 'Do you have a account?' : `Do you don't have a account?`}
+                                <a 
+                                    onClick={() => setHasRegister(!hasRegister)}
+                                    className='text-white font-medium tracking-wide cursor-pointer'> 
+                                    {hasRegister ? ' Sign in' : ' Register'}
+                                    </a>
                             </p>
                         </div>
                     </section>
