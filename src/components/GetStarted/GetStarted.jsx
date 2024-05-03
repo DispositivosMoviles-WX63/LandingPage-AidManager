@@ -4,6 +4,7 @@ import { FacebookIcon } from './FacebookIcon';
 import { GoogleIcon } from './GoogleIcon';
 import { useState } from 'react';
 import ArrowIcon from '../../assets/icon-arrow.svg';
+import { Link } from 'react-router-dom';
 
 export const GetStarted = () => {
 
@@ -14,12 +15,14 @@ export const GetStarted = () => {
     return (
         <section className='h-screen w-full relative'>
             <div className='z-50' style={{ position: 'fixed', top: '0', left: '0' }}>
-                <div className='return-home flex flex-row gap-2 items-center p-2.5'>
-                    <div className='bg-green-900 p-1 rounded-full'>
-                        <img className='w-3 h-3 rounded-full' src={ArrowIcon} />
+                <Link to="/">
+                    <div className='return-home flex flex-row gap-2 items-center p-2.5'>
+                        <div className='bg-green-900 p-1 rounded-full'>
+                            <img className='w-3 h-3 rounded-full' src={ArrowIcon} />
+                        </div>
+                        <p className='text-xl font-medium tracking-wide mb-0.5 text-white'>Return to home</p>
                     </div>
-                    <p className='text-xl font-medium tracking-wide mb-0.5 text-white'>Return to home</p>
-                </div>
+                </Link>
             </div>
             <div className='h-full grid grid-cols-2 grid-rows-1 text-slate-50'>
                 <div className='h-full w-full hero'>
@@ -84,7 +87,7 @@ export const GetStarted = () => {
                                 )
                         }
                         <div className='flex flex-col items-center gap-3.5 mt-2'>
-                            <h2 className='font-medium tracking-wide'>{ hasRegister? "Register with": "Sign in with" }</h2>
+                            <h2 className='font-medium tracking-wide'>{hasRegister ? "Register with" : "Sign in with"}</h2>
                             <div className='flex flex-row w-full gap-3'>
                                 <div
                                     className='flex flex-row items-center justify-center cursor-pointer
@@ -110,11 +113,11 @@ export const GetStarted = () => {
                                 </div>
                             </div>
                             <p className='mt-6 text-slate-300 text-center'>{hasRegister ? 'Do you have a account?' : `Do you don't have a account?`}
-                                <a 
+                                <a
                                     onClick={() => setHasRegister(!hasRegister)}
-                                    className='text-white font-medium tracking-wide cursor-pointer'> 
+                                    className='text-white font-medium tracking-wide cursor-pointer'>
                                     {hasRegister ? ' Sign in' : ' Register'}
-                                    </a>
+                                </a>
                             </p>
                         </div>
                     </section>
