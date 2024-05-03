@@ -10,22 +10,31 @@ import { Service } from './components/Service/Service'
 import { Testimonials } from './components/Testimonials/Testimonials'
 import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { GetStarted } from "./components/GetStarted/GetStarted";
 
 function App() {
 
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Service />
-        <BrandCarousel />
-        <Testimonials />
-        <Contact/>
-      </main>
-      <Footer/>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/get-started" element={<GetStarted />} />
+        <Route path="/" element={
+          <>
+            <Navbar />
+            <main>
+              <Hero />
+              <About />
+              <Service />
+              <BrandCarousel />
+              <Testimonials />
+              <Contact/>
+            </main>
+            <Footer/>
+          </>
+        } />
+      </Routes>
+    </Router>
   )
 }
 

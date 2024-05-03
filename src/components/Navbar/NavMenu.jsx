@@ -1,5 +1,6 @@
 import { Button } from "../Button/Button"
 import { NavLink } from "./NavLink"
+import { Link } from 'react-router-dom';
 
 const links = [
     { name: 'Home', path: "#" },
@@ -26,7 +27,9 @@ export const NavMenu = ({ header, nav }) => {
                         />
                     )
                 }
-                <Button name="Get Started" />
+                <Link to="/get-started">
+                    <Button name="Get Started" />
+                </Link>
             </ul>
         </div>
     )
