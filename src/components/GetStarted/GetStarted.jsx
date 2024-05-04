@@ -24,11 +24,11 @@ export const GetStarted = () => {
                     </div>
                 </Link>
             </div>
-            <div className='h-full grid grid-cols-2 grid-rows-1 text-slate-50'>
-                <div className='h-full w-full hero'>
+            <div className='h-full grid grid-cols-1 lg:grid-cols-2 grid-rows-1 text-slate-50'>
+                <div className='h-full w-full hero hidden lg:block'>
                 </div>
                 <div className='h-full bg-stone-800 flex flex-col gap-5 justify-center'>
-                    <section className='flex flex-col w-11/12 max-w-[600px] mx-auto gap-8'>
+                    <section className='left flex flex-col w-11/12 max-w-[600px] mx-auto gap-8'>
                         <h1 className='mb-2 text-green-700 font-medium text-center text-5xl font-lora tracking-wide'>Welcome to</h1>
                         <div className='flex flex-col justify-center w-full mb-5 px-10'>
                             <img className='w-full h-full' src={AidLogoLogin}></img>
@@ -79,15 +79,16 @@ export const GetStarted = () => {
                                                 type='password' placeholder='Insert a password'>
                                             </input>
                                         </div>
-                                        <button className='bg-green-800 botoncito font-medium uppercase 
-                                py-2.5 mt-4'>
-                                            Go to Application
-                                        </button>
+                                        <a className='flex items-stretch w-full' href="https://aid-manager-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                            <button className='h-full w-full inline bg-green-800 botoncito font-medium uppercase py-4'>
+                                                Go to Application
+                                            </button>
+                                        </a>
                                     </form>
                                 )
                         }
                         <div className='flex flex-col items-center gap-3.5 mt-2'>
-                            <h2 className='font-medium tracking-wide'>{hasRegister ? "Register with" : "Sign in with"}</h2>
+                            <h2 className='register font-medium tracking-wide'>{hasRegister ? "Register with" : "Sign in with"}</h2>
                             <div className='flex flex-row w-full gap-3'>
                                 <div
                                     className='flex flex-row items-center justify-center cursor-pointer
@@ -112,7 +113,7 @@ export const GetStarted = () => {
                                     <p>Facebook</p>
                                 </div>
                             </div>
-                            <p className='mt-6 text-slate-300 text-center'>{hasRegister ? 'Do you have a account?' : `Do you don't have a account?`}
+                            <p className='sign mt-6 text-slate-300 text-center'>{hasRegister ? 'Do you have a account?' : `Do you don't have a account?`}
                                 <a
                                     onClick={() => setHasRegister(!hasRegister)}
                                     className='text-white font-medium tracking-wide cursor-pointer'>

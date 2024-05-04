@@ -1,5 +1,5 @@
 .botoncito {
-    border-radius: 8px !important;
+    border-radius: 8px;
 }
 
 .hero {
@@ -28,4 +28,23 @@
 
 .return-home:hover {
     background-color: rgba(45, 85, 55, 0.75);
+}
+
+@media screen and (max-height: 800px) {
+    .left{
+        gap: 1.25rem !important;
+    }
+
+    .sign {
+        margin-top: 8px !important;
+    }
+
+    .register {
+        display: none !important;
+    }
+
+    .title {
+        margin-bottom: 0px !important;
+        font-size: 2.25rem !important;
+    }
 }
