@@ -8,7 +8,10 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
  -->
 
- # Landing Page - AidManager 🗿🗿🗿
+# Landing Page - AidManager 🗿🗿🗿
+
+### Landing Page deployment
+[Landing Page - AidManager](https://landing-page-aid-manager-37nb.vercel.app/)
 
 ### Requisitos Previos
 
