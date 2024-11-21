@@ -13,8 +13,7 @@ export const Hero = () => {
                         "Empowering Lives, Building Hope: Beneficient<br />Events that make a Difference"
                     </p>
                     <div className="flex flex-col sm:flex-row gap-7 sm:gap-10 mt-4">
-                        <Button name="Our Team" />
-                        <Button name="Know More" />
+                        <Button name="Download Now"/>
                     </div>
                 </div>
             </div>
